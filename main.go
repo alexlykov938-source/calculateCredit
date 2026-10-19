@@ -43,4 +43,7 @@ func main() {
 
 	fmt.Println("Результат расчета:")
 	fmt.Println(report)
+
+	fmt.Print("\nНажмите Enter, чтобы выйти из программы...")
+	fmt.Scanln()
 }
