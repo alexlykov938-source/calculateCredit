@@ -46,13 +46,13 @@ func CalculateCredit(amount float64, interestRate float64, years int) (string, e
 		totalOverpayment += interestPayment
 		yearlyOverpayment += interestPayment
 
+		if currentBalance < 0 {
+			currentBalance = 0
+		}
+
 		if months%12 == 0 {
 			reportResult += fmt.Sprintf("Год %d: Остаток долга: %.2f, Переплата за год: %.2f, Общая переплата: %.2f\n", months/12, currentBalance, yearlyOverpayment, totalOverpayment)
 			yearlyOverpayment = 0
-		}
-
-		if currentBalance < 0 {
-			currentBalance = 0
 		}
 	}
 
